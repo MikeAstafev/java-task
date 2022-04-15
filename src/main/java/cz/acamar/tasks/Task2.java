@@ -18,6 +18,23 @@ public class Task2 {
      * @return - an array of the squares of each number sorted in non-decreasing order
      */
     public int[] squaresOfSortedArray(int[] input) {
-        return null;
+
+        // As the array is already sorted we can compare the first and the last elements.
+        // After that we simply squares the biggest one and place it at the end of result array
+        // So time complexity and auxiliary space will be O(n)
+        int left = 0, right = input.length - 1;
+
+        int[] result = new int[input.length];
+
+        for(int i = input.length - 1; i >=0; --i) {
+            if(Math.abs(input[left]) > input[right]) {
+                result[i] = input[left]*input[left];
+                ++left;
+            } else {
+                result[i] = input[right]*input[right];
+                --right;
+            }
+        }
+        return result;
     }
 }

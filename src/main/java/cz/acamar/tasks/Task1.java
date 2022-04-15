@@ -17,6 +17,15 @@ public class Task1 {
      * @return - the length of the last word in the string.
      */
     public int lengthOfLastWord(String str) {
-        return 0;
+
+        //Its cheap to store 2 int params, and complexity of str.charAt(index) is O(n)
+        int count = 0;
+        for(int i = str.length()-1; i>=0; --i) {
+            if(Character.isLetter(str.charAt(i)))
+                count++;
+            else
+                break;
+        }
+        return count;
     }
 }
