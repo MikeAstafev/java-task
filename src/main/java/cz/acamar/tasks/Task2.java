@@ -27,7 +27,7 @@ public class Task2 {
         int[] result = new int[input.length];
 
         for(int i = input.length - 1; i >=0; --i) {
-            if(Math.abs(input[left]) > input[right]) {
+            if(Math.abs(input[left]) > Math.abs(input[right])) {
                 result[i] = input[left]*input[left];
                 ++left;
             } else {
